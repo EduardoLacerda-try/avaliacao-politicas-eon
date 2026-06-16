@@ -46,3 +46,24 @@ Primeiro, clone este repositório:
 
 ```bash
 git clone https://github.com/EduardoLacerda-try/avaliacao-politicas-eon.git
+```
+
+Em seguida, acesse a pasta do projeto:
+
+```bash
+cd avaliacao-politicas-eon
+```
+
+Instale as dependências necessárias:
+
+```bash
+pip install -r requirements.txt
+```
+
+Execute o simulador:
+
+```bash
+python src/eon_simulador_final_tcc.py
+```
+
+Ao final da execução, o simulador gera um arquivo de log com os resultados numéricos e um gráfico da probabilidade de bloqueio em função da carga oferecida.
