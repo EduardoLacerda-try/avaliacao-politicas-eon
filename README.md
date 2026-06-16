@@ -67,3 +67,21 @@ python src/eon_simulador_final_tcc.py
 ```
 
 Ao final da execução, o simulador gera um arquivo de log com os resultados numéricos e um gráfico da probabilidade de bloqueio em função da carga oferecida.
+
+## Cenários de tráfego
+
+O parâmetro `PROB_SMALL`, definido no arquivo do simulador, representa a probabilidade de uma requisição pertencer à classe `small`.
+
+Para reproduzir os três cenários avaliados na monografia, altere esse parâmetro no código para:
+
+```python
+PROB_SMALL = 0.1
+PROB_SMALL = 0.5
+PROB_SMALL = 0.9
+```
+
+## Observações
+
+Este simulador foi desenvolvido com finalidade acadêmica, como parte de um Trabalho de Conclusão de Curso em Engenharia de Controle e Automação.
+
+O modelo utiliza algumas simplificações, como roteamento por menor caminho fixo, escolha uniforme dos pares origem-destino e aproximação da demanda espectral pelo número de saltos da rota.
