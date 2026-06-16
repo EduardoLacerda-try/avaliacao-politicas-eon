@@ -85,3 +85,9 @@ PROB_SMALL = 0.9
 Este simulador foi desenvolvido com finalidade acadêmica, como parte de um Trabalho de Conclusão de Curso em Engenharia de Controle e Automação.
 
 O modelo utiliza algumas simplificações, como roteamento por menor caminho fixo, escolha uniforme dos pares origem-destino e aproximação da demanda espectral pelo número de saltos da rota.
+
+## Autor
+
+Eduardo da Silva Lacerda  
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - Campus Guarulhos  
+Curso de Engenharia de Controle e Automação
