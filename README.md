@@ -40,8 +40,9 @@ O simulador calcula:
 
 ## Como executar
 
-Clone o repositório:
+Para executar o simulador, é necessário ter o Python instalado na máquina.
+
+Primeiro, clone este repositório:
 
 ```bash
-git clone https://github.com/SEU-USUARIO/avaliacao-politicas-eon.git
-cd avaliacao-politicas-eon
+git clone https://github.com/EduardoLacerda-try/avaliacao-politicas-eon.git
