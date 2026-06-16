@@ -71,11 +71,11 @@ A imagem abaixo apresenta um exemplo de gráfico gerado pelo simulador, relacion
 ```text
 avaliacao-politicas-eon/
 │
-├── src/
-│   └── eon_spectrum_allocation_simulator.py
-│
 ├── results/
 │   └── pb_vs_erlang.png
+│
+├── src/
+│   └── eon_spectrum_allocation_simulator.py
 │
 ├── .gitignore
 ├── LICENSE
