@@ -26,7 +26,7 @@ WARMUP_REQUISICOES = 0
 
 CENARIO_ESPECTRAL = "final_tcc"
 ARQUIVO_LOG = "saida_simulacao.txt"
-ARQUIVO_GRAFICO = "probabilidade_bloqueio_por_carga.png"
+ARQUIVO_GRAFICO = "pb_vs_erlang.png"
 
 CARGAS_ERLANG = [
     50, 100, 200, 400, 800, 1200, 1600, 2000, 3000, 4000,
