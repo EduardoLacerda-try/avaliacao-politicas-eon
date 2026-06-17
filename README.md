@@ -114,6 +114,7 @@ A imagem abaixo apresenta o ganho visual da política FF/LF em relação à pol�
 avaliacao-politicas-eon/
 │
 ├── results/
+│   ├── saida_simulacao.txt
 │   ├── pb_vs_erlang_0_1_small.png
 │   ├── pb_vs_erlang_0_5_small.png
 │   ├── pb_vs_erlang_0_9_small.png
