@@ -16,7 +16,11 @@ import numpy as np
 
 NUMERO_DE_REQUISICOES = 1_000_000
 TAXA_OPERACAO = 1 / 1000
-PROB_SMALL = 0.1
+CENARIOS_TRAFEGO = [
+    (0.1, "0,1 small"),
+    (0.5, "0,5 small"),
+    (0.9, "0,9 small"),
+]
 NUM_SLOTS = 320
 N_REPLICACOES = 1
 
@@ -26,7 +30,9 @@ WARMUP_REQUISICOES = 0
 
 CENARIO_ESPECTRAL = "final_tcc"
 ARQUIVO_LOG = "saida_simulacao.txt"
-ARQUIVO_GRAFICO = "pb_vs_erlang.png"
+ARQUIVO_GRAFICO_PB_PREFIXO = "pb_vs_erlang"
+ARQUIVO_GRAFICO_GANHO_CARGA = "ganho_visual_vs_erlang_tres_cenarios.png"
+ARQUIVO_GRAFICO_GANHO_PB = "ganho_visual_vs_pb_tres_cenarios.png"
 
 CARGAS_ERLANG = [
     50, 100, 200, 400, 800, 1200, 1600, 2000, 3000, 4000,
@@ -478,19 +484,81 @@ def imprimir_resumo(carga: float, politica_large: str, resultado: ResultadoSimul
     log()
 
 
-def gerar_grafico_pb(cargas: List[float], pb_ff_ff: List[float], pb_ff_lf: List[float]) -> None:
+def nome_arquivo_seguro(rotulo: str) -> str:
+    return (
+        rotulo.lower()
+        .replace(",", "_")
+        .replace(" ", "_")
+        .replace("/", "_")
+    )
+
+
+def gerar_grafico_pb(
+    cargas: List[float],
+    pb_ff_ff: List[float],
+    pb_ff_lf: List[float],
+    rotulo_cenario: str,
+) -> None:
+    nome_arquivo = f"{ARQUIVO_GRAFICO_PB_PREFIXO}_{nome_arquivo_seguro(rotulo_cenario)}.png"
+
     plt.figure(figsize=(10, 6))
     plt.plot(cargas, pb_ff_ff, marker="o", label="FF/FF")
     plt.plot(cargas, pb_ff_lf, marker="s", label="FF/LF")
     plt.xlabel("Carga (Erlang)", fontsize=12)
     plt.ylabel("Probabilidade de bloqueio (Pb)", fontsize=12)
-    plt.title("Probabilidade de bloqueio em funcao da carga")
+    plt.title(f"Probabilidade de bloqueio - {rotulo_cenario}")
     plt.grid(True)
     plt.legend()
     plt.ylim(0, 1)
     plt.tight_layout()
-    plt.savefig(ARQUIVO_GRAFICO, dpi=300)
-    plt.show()
+    plt.savefig(nome_arquivo, dpi=300)
+    plt.close()
+
+
+def gerar_grafico_ganho_por_carga(
+    cargas: List[float],
+    resultados_por_cenario: Dict[str, Dict[str, List[float]]],
+) -> None:
+    plt.figure(figsize=(10, 6))
+
+    for rotulo, dados in resultados_por_cenario.items():
+        pb_ff_ff = np.array(dados["pb_ff_ff"])
+        pb_ff_lf = np.array(dados["pb_ff_lf"])
+        ganho_percentual = (pb_ff_ff - pb_ff_lf) * 100.0
+        plt.plot(cargas, ganho_percentual, marker="o", label=rotulo)
+
+    plt.axhline(0, linewidth=1)
+    plt.xlabel("Carga (Erlang)", fontsize=12)
+    plt.ylabel("Ganho visual = (Pb_FF/FF - Pb_FF/LF) em pontos percentuais", fontsize=12)
+    plt.title("Ganho visual da politica FF/LF em relacao a FF/FF")
+    plt.grid(True)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(ARQUIVO_GRAFICO_GANHO_CARGA, dpi=300)
+    plt.close()
+
+
+def gerar_grafico_ganho_por_pb(
+    resultados_por_cenario: Dict[str, Dict[str, List[float]]],
+) -> None:
+    plt.figure(figsize=(10, 6))
+
+    for rotulo, dados in resultados_por_cenario.items():
+        pb_ff_ff = np.array(dados["pb_ff_ff"])
+        pb_ff_lf = np.array(dados["pb_ff_lf"])
+        ganho_percentual = (pb_ff_ff - pb_ff_lf) * 100.0
+        menor_pb = np.minimum(pb_ff_ff, pb_ff_lf)
+        plt.plot(menor_pb, ganho_percentual, marker="o", label=rotulo)
+
+    plt.axhline(0, linewidth=1)
+    plt.xlabel("Menor probabilidade de bloqueio entre FF/FF e FF/LF", fontsize=12)
+    plt.ylabel("Ganho visual = (Pb_FF/FF - Pb_FF/LF) em pontos percentuais", fontsize=12)
+    plt.title("Ganho visual da politica FF/LF em funcao da probabilidade de bloqueio")
+    plt.grid(True)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(ARQUIVO_GRAFICO_GANHO_PB, dpi=300)
+    plt.close()
 
 
 # -----------------------------------------------------------------------------
@@ -517,7 +585,7 @@ def main() -> None:
         log(f"Pares OD: {len(topologia.od_pairs)}")
         log(f"Slots por enlace: {NUM_SLOTS}")
         log(f"Requisicoes por simulacao: {NUMERO_DE_REQUISICOES}")
-        log(f"Probabilidade de requisicao small: {PROB_SMALL}")
+        log(f"Cenarios de trafego: {', '.join(rotulo for _, rotulo in CENARIOS_TRAFEGO)}")
         log(f"Cenario espectral: {cenario.nome}")
         log(f"{cenario.descricao_small}")
         log(f"{cenario.descricao_large}")
@@ -526,66 +594,92 @@ def main() -> None:
         log("=" * 70)
         log()
 
-        resultados_ff_ff: List[float] = []
-        resultados_ff_lf: List[float] = []
+        resultados_por_cenario: Dict[str, Dict[str, List[float]]] = {}
 
-        for carga in CARGAS_ERLANG:
-            pbs_ff_ff = []
-            pbs_ff_lf = []
-
-            log(f"===== Carga {carga} Erlang =====")
-
-            for rep in range(N_REPLICACOES):
-                seed = int(1000 + carga * 100 + rep)
-                stream = gerar_stream_trafego(
-                    numero_de_requisicoes=NUMERO_DE_REQUISICOES,
-                    carga_erlang=carga,
-                    taxa_operacao=TAXA_OPERACAO,
-                    prob_small=PROB_SMALL,
-                    numero_de_pares_od=len(topologia.od_pairs),
-                    seed=seed,
-                )
-
-                resultado_ff_ff = simular(
-                    topologia=topologia,
-                    stream=stream,
-                    num_slots=NUM_SLOTS,
-                    slots_por_od=slots_por_od,
-                    politica_large="FF",
-                    warmup_requisicoes=WARMUP_REQUISICOES,
-                    medir_causa_bloqueio=MEDIR_CAUSA_BLOQUEIO,
-                )
-
-                resultado_ff_lf = simular(
-                    topologia=topologia,
-                    stream=stream,
-                    num_slots=NUM_SLOTS,
-                    slots_por_od=slots_por_od,
-                    politica_large="LF",
-                    warmup_requisicoes=WARMUP_REQUISICOES,
-                    medir_causa_bloqueio=MEDIR_CAUSA_BLOQUEIO,
-                )
-
-                imprimir_resumo(carga, "FF", resultado_ff_ff)
-                imprimir_resumo(carga, "LF", resultado_ff_lf)
-
-                pbs_ff_ff.append(resultado_ff_ff.pb)
-                pbs_ff_lf.append(resultado_ff_lf.pb)
-
-            media_ff_ff = float(np.mean(pbs_ff_ff))
-            media_ff_lf = float(np.mean(pbs_ff_lf))
-            delta = media_ff_lf - media_ff_ff
-
-            resultados_ff_ff.append(media_ff_ff)
-            resultados_ff_lf.append(media_ff_lf)
-
-            log("Resumo da carga")
-            log(f"Pb medio FF/FF: {media_ff_ff:.6f}")
-            log(f"Pb medio FF/LF: {media_ff_lf:.6f}")
-            log(f"Delta Pb (FF/LF - FF/FF): {delta:+.6f}")
+        for prob_small, rotulo_cenario in CENARIOS_TRAFEGO:
+            log("#" * 70)
+            log(f"Cenario de trafego: {rotulo_cenario}")
+            log(f"Probabilidade de requisicao small: {prob_small}")
+            log(f"Probabilidade de requisicao large: {1.0 - prob_small}")
+            log("#" * 70)
             log()
 
-        gerar_grafico_pb(CARGAS_ERLANG, resultados_ff_ff, resultados_ff_lf)
+            resultados_ff_ff: List[float] = []
+            resultados_ff_lf: List[float] = []
+
+            for carga in CARGAS_ERLANG:
+                pbs_ff_ff = []
+                pbs_ff_lf = []
+
+                log(f"===== Cenario {rotulo_cenario} | Carga {carga} Erlang =====")
+
+                for rep in range(N_REPLICACOES):
+                    seed = int(1000 + prob_small * 10000 + carga * 100 + rep)
+                    stream = gerar_stream_trafego(
+                        numero_de_requisicoes=NUMERO_DE_REQUISICOES,
+                        carga_erlang=carga,
+                        taxa_operacao=TAXA_OPERACAO,
+                        prob_small=prob_small,
+                        numero_de_pares_od=len(topologia.od_pairs),
+                        seed=seed,
+                    )
+
+                    resultado_ff_ff = simular(
+                        topologia=topologia,
+                        stream=stream,
+                        num_slots=NUM_SLOTS,
+                        slots_por_od=slots_por_od,
+                        politica_large="FF",
+                        warmup_requisicoes=WARMUP_REQUISICOES,
+                        medir_causa_bloqueio=MEDIR_CAUSA_BLOQUEIO,
+                    )
+
+                    resultado_ff_lf = simular(
+                        topologia=topologia,
+                        stream=stream,
+                        num_slots=NUM_SLOTS,
+                        slots_por_od=slots_por_od,
+                        politica_large="LF",
+                        warmup_requisicoes=WARMUP_REQUISICOES,
+                        medir_causa_bloqueio=MEDIR_CAUSA_BLOQUEIO,
+                    )
+
+                    imprimir_resumo(carga, "FF", resultado_ff_ff)
+                    imprimir_resumo(carga, "LF", resultado_ff_lf)
+
+                    pbs_ff_ff.append(resultado_ff_ff.pb)
+                    pbs_ff_lf.append(resultado_ff_lf.pb)
+
+                media_ff_ff = float(np.mean(pbs_ff_ff))
+                media_ff_lf = float(np.mean(pbs_ff_lf))
+                delta = media_ff_lf - media_ff_ff
+                ganho_visual = -delta
+
+                resultados_ff_ff.append(media_ff_ff)
+                resultados_ff_lf.append(media_ff_lf)
+
+                log("Resumo da carga")
+                log(f"Pb medio FF/FF: {media_ff_ff:.6f}")
+                log(f"Pb medio FF/LF: {media_ff_lf:.6f}")
+                log(f"Delta Pb (FF/LF - FF/FF): {delta:+.6f}")
+                log(f"Ganho visual (FF/FF - FF/LF): {ganho_visual:+.6f}")
+                log()
+
+            resultados_por_cenario[rotulo_cenario] = {
+                "pb_ff_ff": resultados_ff_ff,
+                "pb_ff_lf": resultados_ff_lf,
+            }
+
+            gerar_grafico_pb(CARGAS_ERLANG, resultados_ff_ff, resultados_ff_lf, rotulo_cenario)
+
+        gerar_grafico_ganho_por_carga(CARGAS_ERLANG, resultados_por_cenario)
+        gerar_grafico_ganho_por_pb(resultados_por_cenario)
+
+        log("Graficos gerados:")
+        for _, rotulo_cenario in CENARIOS_TRAFEGO:
+            log(f"  {ARQUIVO_GRAFICO_PB_PREFIXO}_{nome_arquivo_seguro(rotulo_cenario)}.png")
+        log(f"  {ARQUIVO_GRAFICO_GANHO_CARGA}")
+        log(f"  {ARQUIVO_GRAFICO_GANHO_PB}")
 
     finally:
         fechar_log()
