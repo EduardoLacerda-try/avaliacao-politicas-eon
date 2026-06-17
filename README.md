@@ -13,6 +13,8 @@ Neste projeto, foi desenvolvido um simulador de eventos discretos em Python para
 - **FF/FF**: requisições small e large alocadas com First-Fit;
 - **FF/LF**: requisições small alocadas com First-Fit e requisições large alocadas com Last-Fit.
 
+Além da probabilidade de bloqueio total, o simulador também classifica os bloqueios conforme seus mecanismos internos, permitindo analisar se a requisição foi bloqueada por falta de recurso bruto, fragmentação local ou desalinhamento espectral.
+
 ## Políticas avaliadas
 
 O simulador compara duas combinações de políticas:
@@ -21,6 +23,8 @@ O simulador compara duas combinações de políticas:
 - **FF/LF**: requisições small são alocadas com First-Fit e requisições large são alocadas com Last-Fit.
 
 A política **First-Fit** seleciona o primeiro bloco contíguo disponível que atende à requisição. Já a política **Last-Fit** seleciona o último bloco contíguo disponível no espectro.
+
+A comparação busca avaliar se o uso de Last-Fit para requisições de maior demanda espectral altera a organização do espectro e influencia a probabilidade de bloqueio da rede.
 
 ## Parâmetros principais
 
@@ -36,7 +40,20 @@ Os parâmetros utilizados estão alinhados aos experimentos finais apresentados 
 - classe small com 3 ou 5 slots, conforme a rota;
 - classe large com 8 ou 10 slots, conforme a rota;
 - roteamento por menor caminho fixo;
-- seleção uniforme dos pares origem-destino.
+- seleção uniforme dos pares origem-destino;
+- comparação pareada entre FF/FF e FF/LF para o mesmo fluxo de tráfego.
+
+## Cenários de tráfego
+
+O simulador executa automaticamente os três cenários de composição de tráfego avaliados na monografia:
+
+| Cenário | Probabilidade de requisição small | Probabilidade de requisição large | Interpretação |
+|---|---:|---:|---|
+| 0,1 small | 0,1 | 0,9 | predominância de requisições large |
+| 0,5 small | 0,5 | 0,5 | cenário balanceado entre classes |
+| 0,9 small | 0,9 | 0,1 | predominância de requisições small |
+
+Esses cenários permitem avaliar como a participação relativa das requisições large influencia a sensibilidade da rede à política de alocação espectral aplicada a essa classe.
 
 ## Métricas calculadas
 
@@ -44,6 +61,8 @@ O simulador calcula:
 
 - probabilidade de bloqueio total;
 - quantidade de requisições aceitas e bloqueadas;
+- diferença de probabilidade de bloqueio entre FF/FF e FF/LF;
+- ganho visual da política FF/LF em relação à política FF/FF;
 - posição média das requisições large aceitas;
 - distribuição das requisições large entre metade baixa e metade alta do espectro;
 - classificação das causas de bloqueio em:
@@ -51,20 +70,43 @@ O simulador calcula:
   - fragmentação local;
   - desalinhamento espectral.
 
+O ganho visual é calculado como:
+
+```text
+G = Pb_FF/FF - Pb_FF/LF
+```
+
+Assim:
+
+- `G > 0`: FF/LF reduziu a probabilidade de bloqueio em relação ao FF/FF;
+- `G < 0`: FF/LF apresentou maior probabilidade de bloqueio em relação ao FF/FF;
+- `G ≈ 0`: as duas políticas apresentaram desempenho semelhante.
+
 ## Saídas geradas
 
 Ao final da execução, o simulador gera:
 
 - arquivo de log com os resultados numéricos da simulação;
-- gráfico da probabilidade de bloqueio em função da carga oferecida.
+- gráficos da probabilidade de bloqueio em função da carga para cada cenário de tráfego;
+- gráfico de ganho visual da política FF/LF em relação à FF/FF para os três cenários;
+- gráfico de ganho visual em função da menor probabilidade de bloqueio observada entre as políticas.
 
-Os gráficos comparativos apresentados na monografia, como as análises de ganho da política FF/LF em relação à FF/FF e a diferença em função da probabilidade de bloqueio, foram gerados em uma etapa posterior de pós-processamento, a partir dos resultados consolidados das simulações.
+Arquivos gerados:
+
+```text
+saida_simulacao.txt
+pb_vs_erlang_0_1_small.png
+pb_vs_erlang_0_5_small.png
+pb_vs_erlang_0_9_small.png
+ganho_visual_vs_erlang_tres_cenarios.png
+ganho_visual_vs_pb_tres_cenarios.png
+```
 
 ## Exemplo de resultado
 
-A imagem abaixo apresenta um exemplo de gráfico gerado pelo simulador, relacionando a probabilidade de bloqueio com a carga oferecida em Erlang.
+A imagem abaixo apresenta o ganho visual da política FF/LF em relação à política FF/FF para os três cenários de composição de tráfego avaliados.
 
-![Probabilidade de bloqueio em função da carga](results/pb_vs_erlang.png)
+![Ganho visual da política FF/LF em relação à FF/FF](results/ganho_visual_vs_erlang_tres_cenarios.png)
 
 ## Estrutura do repositório
 
@@ -72,7 +114,11 @@ A imagem abaixo apresenta um exemplo de gráfico gerado pelo simulador, relacion
 avaliacao-politicas-eon/
 │
 ├── results/
-│   └── pb_vs_erlang.png
+│   ├── pb_vs_erlang_0_1_small.png
+│   ├── pb_vs_erlang_0_5_small.png
+│   ├── pb_vs_erlang_0_9_small.png
+│   ├── ganho_visual_vs_erlang_tres_cenarios.png
+│   └── ganho_visual_vs_pb_tres_cenarios.png
 │
 ├── src/
 │   └── eon_spectrum_allocation_simulator.py
@@ -111,25 +157,27 @@ Execute o simulador:
 python src/eon_spectrum_allocation_simulator.py
 ```
 
-Ao final da execução, o simulador gera um arquivo de log com os resultados numéricos e um gráfico da probabilidade de bloqueio em função da carga oferecida.
+Ao final da execução, o simulador gera um arquivo de log com os resultados numéricos e os gráficos comparativos das políticas FF/FF e FF/LF nos três cenários de tráfego.
 
-## Cenários de tráfego
+## Observação sobre tempo de execução
 
-O parâmetro `PROB_SMALL`, definido no arquivo do simulador, representa a probabilidade de uma requisição pertencer à classe small.
+A versão final do simulador utiliza 1.000.000 de requisições por simulação e executa três cenários de tráfego, cada um com diferentes cargas em Erlang e comparação entre as políticas FF/FF e FF/LF.
 
-Para reproduzir os três cenários avaliados na monografia, altere esse parâmetro no código para:
+Por esse motivo, a execução completa pode levar um tempo considerável, dependendo do desempenho da máquina utilizada.
+
+Para realizar apenas um teste funcional rápido, é possível reduzir temporariamente o parâmetro:
 
 ```python
-PROB_SMALL = 0.1
-PROB_SMALL = 0.5
-PROB_SMALL = 0.9
+NUMERO_DE_REQUISICOES = 1_000_000
 ```
 
-Esses valores representam, respectivamente:
+para um valor menor, como:
 
-- predominância de requisições large;
-- cenário balanceado entre requisições small e large;
-- predominância de requisições small.
+```python
+NUMERO_DE_REQUISICOES = 10_000
+```
+
+Após o teste, recomenda-se retornar o valor para `1_000_000`, de modo a manter a configuração alinhada aos experimentos finais da monografia.
 
 ## Limitações do modelo
 
@@ -154,6 +202,14 @@ Essas simplificações permitiram manter o escopo do estudo controlado e concent
 - Simulação de eventos discretos
 - Modelagem computacional
 - Análise de desempenho
+
+## Trabalho relacionado
+
+Este repositório está associado ao Trabalho de Conclusão de Curso:
+
+**Avaliação de Políticas de Alocação Espectral em Redes Ópticas Elásticas com Tráfego Multiclasse**
+
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo — Campus Guarulhos, 2026.
 
 ## Autor
 
