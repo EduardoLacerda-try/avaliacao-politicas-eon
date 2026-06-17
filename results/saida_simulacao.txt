@@ -1,0 +1,2614 @@
+======================================================================
+Simulador de EON - comparacao FF/FF x FF/LF
+======================================================================
+Nos: 12
+Enlaces modelados: 28
+Pares OD: 132
+Slots por enlace: 320
+Requisicoes por simulacao: 1000000
+Cenarios de trafego: 0,1 small, 0,5 small, 0,9 small
+Cenario espectral: final_tcc
+small = 3 ou 5 slots, conforme o numero de hops da rota
+large = 8 ou 10 slots, conforme o numero de hops da rota
+Distribuicao small por OD: 3:54 OD, 5:78 OD
+Distribuicao large por OD: 8:54 OD, 10:78 OD
+======================================================================
+
+######################################################################
+Cenario de trafego: 0,1 small
+Probabilidade de requisicao small: 0.1
+Probabilidade de requisicao large: 0.9
+######################################################################
+
+===== Cenario 0,1 small | Carga 50 Erlang =====
+----------------------------------------------------------------------
+Carga: 50 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.000007
+Atendidas: 999993
+Bloqueadas: 7
+Tempo de execucao: 6.78s
+Large na metade baixa: 820117
+Large na metade alta: 80030
+Posicao media large: 64.90
+Causas de bloqueio:
+  recurso bruto: 0
+  fragmentacao local: 1
+  desalinhamento: 6
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 50 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.000008
+Atendidas: 999992
+Bloqueadas: 8
+Tempo de execucao: 9.67s
+Large na metade baixa: 57917
+Large na metade alta: 842229
+Posicao media large: 259.71
+Causas de bloqueio:
+  recurso bruto: 0
+  fragmentacao local: 4
+  desalinhamento: 4
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.000007
+Pb medio FF/LF: 0.000008
+Delta Pb (FF/LF - FF/FF): +0.000001
+Ganho visual (FF/FF - FF/LF): -0.000001
+
+===== Cenario 0,1 small | Carga 100 Erlang =====
+----------------------------------------------------------------------
+Carga: 100 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.045237
+Atendidas: 954763
+Bloqueadas: 45237
+Tempo de execucao: 9.70s
+Large na metade baixa: 623629
+Large na metade alta: 231967
+Posicao media large: 101.10
+Causas de bloqueio:
+  recurso bruto: 12
+  fragmentacao local: 14754
+  desalinhamento: 30471
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 100 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.042060
+Atendidas: 957940
+Bloqueadas: 42060
+Tempo de execucao: 8.35s
+Large na metade baixa: 204053
+Large na metade alta: 654917
+Posicao media large: 226.71
+Causas de bloqueio:
+  recurso bruto: 42
+  fragmentacao local: 12508
+  desalinhamento: 29510
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.045237
+Pb medio FF/LF: 0.042060
+Delta Pb (FF/LF - FF/FF): -0.003177
+Ganho visual (FF/FF - FF/LF): +0.003177
+
+===== Cenario 0,1 small | Carga 200 Erlang =====
+----------------------------------------------------------------------
+Carga: 200 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.258883
+Atendidas: 741117
+Bloqueadas: 258883
+Tempo de execucao: 8.32s
+Large na metade baixa: 474793
+Large na metade alta: 170986
+Posicao media large: 101.29
+Causas de bloqueio:
+  recurso bruto: 20
+  fragmentacao local: 82325
+  desalinhamento: 176538
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 200 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.254271
+Atendidas: 745729
+Bloqueadas: 254271
+Tempo de execucao: 9.35s
+Large na metade baixa: 151492
+Large na metade alta: 500308
+Posicao media large: 226.72
+Causas de bloqueio:
+  recurso bruto: 142
+  fragmentacao local: 76564
+  desalinhamento: 177565
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.258883
+Pb medio FF/LF: 0.254271
+Delta Pb (FF/LF - FF/FF): -0.004612
+Ganho visual (FF/FF - FF/LF): +0.004612
+
+===== Cenario 0,1 small | Carga 400 Erlang =====
+----------------------------------------------------------------------
+Carga: 400 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.425680
+Atendidas: 574320
+Bloqueadas: 425680
+Tempo de execucao: 8.36s
+Large na metade baixa: 362126
+Large na metade alta: 130333
+Posicao media large: 102.99
+Causas de bloqueio:
+  recurso bruto: 31
+  fragmentacao local: 181240
+  desalinhamento: 244409
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 400 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.420135
+Atendidas: 579865
+Bloqueadas: 420135
+Tempo de execucao: 12.37s
+Large na metade baixa: 115127
+Large na metade alta: 384901
+Posicao media large: 225.77
+Causas de bloqueio:
+  recurso bruto: 239
+  fragmentacao local: 185095
+  desalinhamento: 234801
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.425680
+Pb medio FF/LF: 0.420135
+Delta Pb (FF/LF - FF/FF): -0.005545
+Ganho visual (FF/FF - FF/LF): +0.005545
+
+===== Cenario 0,1 small | Carga 800 Erlang =====
+----------------------------------------------------------------------
+Carga: 800 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.559947
+Atendidas: 440053
+Bloqueadas: 559947
+Tempo de execucao: 6.95s
+Large na metade baixa: 271604
+Large na metade alta: 102484
+Posicao media large: 108.59
+Causas de bloqueio:
+  recurso bruto: 143
+  fragmentacao local: 326978
+  desalinhamento: 232826
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 800 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.553986
+Atendidas: 446014
+Bloqueadas: 553986
+Tempo de execucao: 7.56s
+Large na metade baixa: 88310
+Large na metade alta: 293215
+Posicao media large: 222.16
+Causas de bloqueio:
+  recurso bruto: 1995
+  fragmentacao local: 361689
+  desalinhamento: 190302
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.559947
+Pb medio FF/LF: 0.553986
+Delta Pb (FF/LF - FF/FF): -0.005961
+Ganho visual (FF/FF - FF/LF): +0.005961
+
+===== Cenario 0,1 small | Carga 1200 Erlang =====
+----------------------------------------------------------------------
+Carga: 1200 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.627500
+Atendidas: 372500
+Bloqueadas: 627500
+Tempo de execucao: 5.67s
+Large na metade baixa: 225235
+Large na metade alta: 89197
+Posicao media large: 113.60
+Causas de bloqueio:
+  recurso bruto: 423
+  fragmentacao local: 411653
+  desalinhamento: 215424
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 1200 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.619667
+Atendidas: 380333
+Bloqueadas: 619667
+Tempo de execucao: 6.97s
+Large na metade baixa: 74887
+Large na metade alta: 248359
+Posicao media large: 218.48
+Causas de bloqueio:
+  recurso bruto: 7412
+  fragmentacao local: 461046
+  desalinhamento: 151209
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.627500
+Pb medio FF/LF: 0.619667
+Delta Pb (FF/LF - FF/FF): -0.007833
+Ganho visual (FF/FF - FF/LF): +0.007833
+
+===== Cenario 0,1 small | Carga 1600 Erlang =====
+----------------------------------------------------------------------
+Carga: 1600 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.669007
+Atendidas: 330993
+Bloqueadas: 669007
+Tempo de execucao: 5.49s
+Large na metade baixa: 194555
+Large na metade alta: 82846
+Posicao media large: 118.42
+Causas de bloqueio:
+  recurso bruto: 712
+  fragmentacao local: 457453
+  desalinhamento: 210842
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 1600 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.661688
+Atendidas: 338312
+Bloqueadas: 661688
+Tempo de execucao: 5.82s
+Large na metade baixa: 67514
+Large na metade alta: 218390
+Posicao media large: 214.80
+Causas de bloqueio:
+  recurso bruto: 19664
+  fragmentacao local: 501276
+  desalinhamento: 140748
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.669007
+Pb medio FF/LF: 0.661688
+Delta Pb (FF/LF - FF/FF): -0.007319
+Ganho visual (FF/FF - FF/LF): +0.007319
+
+===== Cenario 0,1 small | Carga 2000 Erlang =====
+----------------------------------------------------------------------
+Carga: 2000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.697971
+Atendidas: 302029
+Bloqueadas: 697971
+Tempo de execucao: 6.91s
+Large na metade baixa: 172038
+Large na metade alta: 79730
+Posicao media large: 122.96
+Causas de bloqueio:
+  recurso bruto: 1064
+  fragmentacao local: 487640
+  desalinhamento: 209267
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 2000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.690788
+Atendidas: 309212
+Bloqueadas: 690788
+Tempo de execucao: 6.23s
+Large na metade baixa: 65694
+Large na metade alta: 194612
+Posicao media large: 210.42
+Causas de bloqueio:
+  recurso bruto: 34307
+  fragmentacao local: 514524
+  desalinhamento: 141957
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.697971
+Pb medio FF/LF: 0.690788
+Delta Pb (FF/LF - FF/FF): -0.007183
+Ganho visual (FF/FF - FF/LF): +0.007183
+
+===== Cenario 0,1 small | Carga 3000 Erlang =====
+----------------------------------------------------------------------
+Carga: 3000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.745774
+Atendidas: 254226
+Bloqueadas: 745774
+Tempo de execucao: 14.91s
+Large na metade baixa: 129031
+Large na metade alta: 80948
+Posicao media large: 136.31
+Causas de bloqueio:
+  recurso bruto: 1006
+  fragmentacao local: 539625
+  desalinhamento: 205143
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 3000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.740421
+Atendidas: 259579
+Bloqueadas: 740421
+Tempo de execucao: 13.54s
+Large na metade baixa: 67761
+Large na metade alta: 149241
+Posicao media large: 199.36
+Causas de bloqueio:
+  recurso bruto: 54238
+  fragmentacao local: 531464
+  desalinhamento: 154719
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.745774
+Pb medio FF/LF: 0.740421
+Delta Pb (FF/LF - FF/FF): -0.005353
+Ganho visual (FF/FF - FF/LF): +0.005353
+
+===== Cenario 0,1 small | Carga 4000 Erlang =====
+----------------------------------------------------------------------
+Carga: 4000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.779655
+Atendidas: 220345
+Bloqueadas: 779655
+Tempo de execucao: 8.03s
+Large na metade baixa: 101024
+Large na metade alta: 78765
+Posicao media large: 146.93
+Causas de bloqueio:
+  recurso bruto: 1271
+  fragmentacao local: 602917
+  desalinhamento: 175467
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 4000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.774872
+Atendidas: 225128
+Bloqueadas: 774872
+Tempo de execucao: 9.98s
+Large na metade baixa: 67797
+Large na metade alta: 119033
+Posicao media large: 189.46
+Causas de bloqueio:
+  recurso bruto: 65062
+  fragmentacao local: 560166
+  desalinhamento: 149644
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.779655
+Pb medio FF/LF: 0.774872
+Delta Pb (FF/LF - FF/FF): -0.004783
+Ganho visual (FF/FF - FF/LF): +0.004783
+
+===== Cenario 0,1 small | Carga 5000 Erlang =====
+----------------------------------------------------------------------
+Carga: 5000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.807245
+Atendidas: 192755
+Bloqueadas: 807245
+Tempo de execucao: 8.73s
+Large na metade baixa: 82708
+Large na metade alta: 72416
+Posicao media large: 152.77
+Causas de bloqueio:
+  recurso bruto: 2785
+  fragmentacao local: 657041
+  desalinhamento: 147419
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 5000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.802978
+Atendidas: 197022
+Bloqueadas: 802978
+Tempo de execucao: 9.55s
+Large na metade baixa: 63219
+Large na metade alta: 98998
+Posicao media large: 184.49
+Causas de bloqueio:
+  recurso bruto: 73698
+  fragmentacao local: 595350
+  desalinhamento: 133930
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.807245
+Pb medio FF/LF: 0.802978
+Delta Pb (FF/LF - FF/FF): -0.004267
+Ganho visual (FF/FF - FF/LF): +0.004267
+
+===== Cenario 0,1 small | Carga 7000 Erlang =====
+----------------------------------------------------------------------
+Carga: 7000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.848934
+Atendidas: 151066
+Bloqueadas: 848934
+Tempo de execucao: 7.76s
+Large na metade baixa: 58724
+Large na metade alta: 58858
+Posicao media large: 159.97
+Causas de bloqueio:
+  recurso bruto: 4668
+  fragmentacao local: 736037
+  desalinhamento: 108229
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 7000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.845375
+Atendidas: 154625
+Bloqueadas: 845375
+Tempo de execucao: 6.75s
+Large na metade baixa: 50733
+Large na metade alta: 72719
+Posicao media large: 180.62
+Causas de bloqueio:
+  recurso bruto: 94956
+  fragmentacao local: 648792
+  desalinhamento: 101627
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.848934
+Pb medio FF/LF: 0.845375
+Delta Pb (FF/LF - FF/FF): -0.003559
+Ganho visual (FF/FF - FF/LF): +0.003559
+
+===== Cenario 0,1 small | Carga 9000 Erlang =====
+----------------------------------------------------------------------
+Carga: 9000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.876023
+Atendidas: 123977
+Bloqueadas: 876023
+Tempo de execucao: 8.25s
+Large na metade baixa: 45163
+Large na metade alta: 47722
+Posicao media large: 162.90
+Causas de bloqueio:
+  recurso bruto: 13089
+  fragmentacao local: 780003
+  desalinhamento: 82931
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 9000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.873846
+Atendidas: 126154
+Bloqueadas: 873846
+Tempo de execucao: 6.04s
+Large na metade baixa: 40920
+Large na metade alta: 56442
+Posicao media large: 178.74
+Causas de bloqueio:
+  recurso bruto: 109819
+  fragmentacao local: 685336
+  desalinhamento: 78691
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.876023
+Pb medio FF/LF: 0.873846
+Delta Pb (FF/LF - FF/FF): -0.002177
+Ganho visual (FF/FF - FF/LF): +0.002177
+
+===== Cenario 0,1 small | Carga 12000 Erlang =====
+----------------------------------------------------------------------
+Carga: 12000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.900786
+Atendidas: 99214
+Bloqueadas: 900786
+Tempo de execucao: 6.78s
+Large na metade baixa: 33204
+Large na metade alta: 37124
+Posicao media large: 165.77
+Causas de bloqueio:
+  recurso bruto: 24080
+  fragmentacao local: 816927
+  desalinhamento: 59779
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 12000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.899614
+Atendidas: 100386
+Bloqueadas: 899614
+Tempo de execucao: 7.40s
+Large na metade baixa: 30856
+Large na metade alta: 42249
+Posicao media large: 178.55
+Causas de bloqueio:
+  recurso bruto: 106467
+  fragmentacao local: 737734
+  desalinhamento: 55413
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.900786
+Pb medio FF/LF: 0.899614
+Delta Pb (FF/LF - FF/FF): -0.001172
+Ganho visual (FF/FF - FF/LF): +0.001172
+
+===== Cenario 0,1 small | Carga 16000 Erlang =====
+----------------------------------------------------------------------
+Carga: 16000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.922422
+Atendidas: 77578
+Bloqueadas: 922422
+Tempo de execucao: 5.33s
+Large na metade baixa: 23313
+Large na metade alta: 27601
+Posicao media large: 169.44
+Causas de bloqueio:
+  recurso bruto: 27201
+  fragmentacao local: 850414
+  desalinhamento: 44807
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 16000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.921522
+Atendidas: 78478
+Bloqueadas: 921522
+Tempo de execucao: 7.92s
+Large na metade baixa: 21847
+Large na metade alta: 30786
+Posicao media large: 180.20
+Causas de bloqueio:
+  recurso bruto: 97766
+  fragmentacao local: 782549
+  desalinhamento: 41207
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.922422
+Pb medio FF/LF: 0.921522
+Delta Pb (FF/LF - FF/FF): -0.000900
+Ganho visual (FF/FF - FF/LF): +0.000900
+
+===== Cenario 0,1 small | Carga 20000 Erlang =====
+----------------------------------------------------------------------
+Carga: 20000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.935111
+Atendidas: 64889
+Bloqueadas: 935111
+Tempo de execucao: 9.98s
+Large na metade baixa: 17853
+Large na metade alta: 21871
+Posicao media large: 171.37
+Causas de bloqueio:
+  recurso bruto: 35753
+  fragmentacao local: 864902
+  desalinhamento: 34456
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 20000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.934647
+Atendidas: 65353
+Bloqueadas: 934647
+Tempo de execucao: 8.14s
+Large na metade baixa: 17026
+Large na metade alta: 24660
+Posicao media large: 181.50
+Causas de bloqueio:
+  recurso bruto: 96849
+  fragmentacao local: 805396
+  desalinhamento: 32402
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.935111
+Pb medio FF/LF: 0.934647
+Delta Pb (FF/LF - FF/FF): -0.000464
+Ganho visual (FF/FF - FF/LF): +0.000464
+
+===== Cenario 0,1 small | Carga 25000 Erlang =====
+----------------------------------------------------------------------
+Carga: 25000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.945329
+Atendidas: 54671
+Bloqueadas: 945329
+Tempo de execucao: 5.06s
+Large na metade baixa: 13734
+Large na metade alta: 17270
+Posicao media large: 172.08
+Causas de bloqueio:
+  recurso bruto: 52621
+  fragmentacao local: 865727
+  desalinhamento: 26981
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 25000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.945592
+Atendidas: 54408
+Bloqueadas: 945592
+Tempo de execucao: 7.27s
+Large na metade baixa: 12670
+Large na metade alta: 18999
+Posicao media large: 182.95
+Causas de bloqueio:
+  recurso bruto: 88913
+  fragmentacao local: 829668
+  desalinhamento: 27011
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.945329
+Pb medio FF/LF: 0.945592
+Delta Pb (FF/LF - FF/FF): +0.000263
+Ganho visual (FF/FF - FF/LF): -0.000263
+
+===== Cenario 0,1 small | Carga 30000 Erlang =====
+----------------------------------------------------------------------
+Carga: 30000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.952595
+Atendidas: 47405
+Bloqueadas: 952595
+Tempo de execucao: 5.48s
+Large na metade baixa: 10925
+Large na metade alta: 14173
+Posicao media large: 173.32
+Causas de bloqueio:
+  recurso bruto: 52060
+  fragmentacao local: 876221
+  desalinhamento: 24314
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 30000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.952663
+Atendidas: 47337
+Bloqueadas: 952663
+Tempo de execucao: 5.60s
+Large na metade baixa: 10613
+Large na metade alta: 15088
+Posicao media large: 181.07
+Causas de bloqueio:
+  recurso bruto: 74324
+  fragmentacao local: 856532
+  desalinhamento: 21807
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.952595
+Pb medio FF/LF: 0.952663
+Delta Pb (FF/LF - FF/FF): +0.000068
+Ganho visual (FF/FF - FF/LF): -0.000068
+
+===== Cenario 0,1 small | Carga 35000 Erlang =====
+----------------------------------------------------------------------
+Carga: 35000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.957768
+Atendidas: 42232
+Bloqueadas: 957768
+Tempo de execucao: 6.14s
+Large na metade baixa: 9148
+Large na metade alta: 11654
+Posicao media large: 173.34
+Causas de bloqueio:
+  recurso bruto: 49244
+  fragmentacao local: 887182
+  desalinhamento: 21342
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 35000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.957774
+Atendidas: 42226
+Bloqueadas: 957774
+Tempo de execucao: 6.59s
+Large na metade baixa: 8729
+Large na metade alta: 12896
+Posicao media large: 182.36
+Causas de bloqueio:
+  recurso bruto: 91224
+  fragmentacao local: 847387
+  desalinhamento: 19163
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.957768
+Pb medio FF/LF: 0.957774
+Delta Pb (FF/LF - FF/FF): +0.000006
+Ganho visual (FF/FF - FF/LF): -0.000006
+
+===== Cenario 0,1 small | Carga 40000 Erlang =====
+----------------------------------------------------------------------
+Carga: 40000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.962369
+Atendidas: 37631
+Bloqueadas: 962369
+Tempo de execucao: 6.33s
+Large na metade baixa: 7560
+Large na metade alta: 10199
+Posicao media large: 174.81
+Causas de bloqueio:
+  recurso bruto: 76397
+  fragmentacao local: 868455
+  desalinhamento: 17517
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 40000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.962440
+Atendidas: 37560
+Bloqueadas: 962440
+Tempo de execucao: 7.21s
+Large na metade baixa: 7125
+Large na metade alta: 10614
+Posicao media large: 183.22
+Causas de bloqueio:
+  recurso bruto: 67887
+  fragmentacao local: 876997
+  desalinhamento: 17556
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.962369
+Pb medio FF/LF: 0.962440
+Delta Pb (FF/LF - FF/FF): +0.000071
+Ganho visual (FF/FF - FF/LF): -0.000071
+
+===== Cenario 0,1 small | Carga 45000 Erlang =====
+----------------------------------------------------------------------
+Carga: 45000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.965188
+Atendidas: 34812
+Bloqueadas: 965188
+Tempo de execucao: 5.02s
+Large na metade baixa: 6719
+Large na metade alta: 8839
+Posicao media large: 173.64
+Causas de bloqueio:
+  recurso bruto: 110727
+  fragmentacao local: 839109
+  desalinhamento: 15352
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 45000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.965281
+Atendidas: 34719
+Bloqueadas: 965281
+Tempo de execucao: 7.78s
+Large na metade baixa: 6335
+Large na metade alta: 9424
+Posicao media large: 182.42
+Causas de bloqueio:
+  recurso bruto: 102050
+  fragmentacao local: 847853
+  desalinhamento: 15378
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.965188
+Pb medio FF/LF: 0.965281
+Delta Pb (FF/LF - FF/FF): +0.000093
+Ganho visual (FF/FF - FF/LF): -0.000093
+
+===== Cenario 0,1 small | Carga 50000 Erlang =====
+----------------------------------------------------------------------
+Carga: 50000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.967912
+Atendidas: 32088
+Bloqueadas: 967912
+Tempo de execucao: 5.57s
+Large na metade baixa: 5884
+Large na metade alta: 7535
+Posicao media large: 172.74
+Causas de bloqueio:
+  recurso bruto: 77952
+  fragmentacao local: 875166
+  desalinhamento: 14794
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 50000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.968309
+Atendidas: 31691
+Bloqueadas: 968309
+Tempo de execucao: 6.89s
+Large na metade baixa: 5445
+Large na metade alta: 8323
+Posicao media large: 183.07
+Causas de bloqueio:
+  recurso bruto: 54903
+  fragmentacao local: 898601
+  desalinhamento: 14805
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.967912
+Pb medio FF/LF: 0.968309
+Delta Pb (FF/LF - FF/FF): +0.000397
+Ganho visual (FF/FF - FF/LF): -0.000397
+
+######################################################################
+Cenario de trafego: 0,5 small
+Probabilidade de requisicao small: 0.5
+Probabilidade de requisicao large: 0.5
+######################################################################
+
+===== Cenario 0,5 small | Carga 50 Erlang =====
+----------------------------------------------------------------------
+Carga: 50 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.000000
+Atendidas: 1000000
+Bloqueadas: 0
+Tempo de execucao: 7.28s
+Large na metade baixa: 481095
+Large na metade alta: 18899
+Posicao media large: 61.53
+Causas de bloqueio:
+  recurso bruto: 0
+  fragmentacao local: 0
+  desalinhamento: 0
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 50 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.000000
+Atendidas: 1000000
+Bloqueadas: 0
+Tempo de execucao: 9.53s
+Large na metade baixa: 869
+Large na metade alta: 499125
+Posicao media large: 280.80
+Causas de bloqueio:
+  recurso bruto: 0
+  fragmentacao local: 0
+  desalinhamento: 0
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.000000
+Pb medio FF/LF: 0.000000
+Delta Pb (FF/LF - FF/FF): +0.000000
+Ganho visual (FF/FF - FF/LF): -0.000000
+
+===== Cenario 0,5 small | Carga 100 Erlang =====
+----------------------------------------------------------------------
+Carga: 100 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.004381
+Atendidas: 995619
+Bloqueadas: 4381
+Tempo de execucao: 6.46s
+Large na metade baixa: 351248
+Large na metade alta: 144958
+Posicao media large: 106.16
+Causas de bloqueio:
+  recurso bruto: 0
+  fragmentacao local: 1819
+  desalinhamento: 2562
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 100 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.004721
+Atendidas: 995279
+Bloqueadas: 4721
+Tempo de execucao: 10.28s
+Large na metade baixa: 42142
+Large na metade alta: 453783
+Posicao media large: 255.97
+Causas de bloqueio:
+  recurso bruto: 0
+  fragmentacao local: 1363
+  desalinhamento: 3358
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.004381
+Pb medio FF/LF: 0.004721
+Delta Pb (FF/LF - FF/FF): +0.000340
+Ganho visual (FF/FF - FF/LF): -0.000340
+
+===== Cenario 0,5 small | Carga 200 Erlang =====
+----------------------------------------------------------------------
+Carga: 200 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.154664
+Atendidas: 845336
+Bloqueadas: 154664
+Tempo de execucao: 8.55s
+Large na metade baixa: 246553
+Large na metade alta: 119019
+Posicao media large: 115.22
+Causas de bloqueio:
+  recurso bruto: 4
+  fragmentacao local: 60141
+  desalinhamento: 94519
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 200 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.155394
+Atendidas: 844606
+Bloqueadas: 155394
+Tempo de execucao: 9.71s
+Large na metade baixa: 41239
+Large na metade alta: 325269
+Posicao media large: 253.51
+Causas de bloqueio:
+  recurso bruto: 1
+  fragmentacao local: 46476
+  desalinhamento: 108917
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.154664
+Pb medio FF/LF: 0.155394
+Delta Pb (FF/LF - FF/FF): +0.000730
+Ganho visual (FF/FF - FF/LF): -0.000730
+
+===== Cenario 0,5 small | Carga 400 Erlang =====
+----------------------------------------------------------------------
+Carga: 400 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.339016
+Atendidas: 660984
+Bloqueadas: 339016
+Tempo de execucao: 8.35s
+Large na metade baixa: 184553
+Large na metade alta: 70292
+Posicao media large: 107.13
+Causas de bloqueio:
+  recurso bruto: 6
+  fragmentacao local: 156191
+  desalinhamento: 182819
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 400 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.337030
+Atendidas: 662970
+Bloqueadas: 337030
+Tempo de execucao: 10.88s
+Large na metade baixa: 30022
+Large na metade alta: 229889
+Posicao media large: 254.54
+Causas de bloqueio:
+  recurso bruto: 13
+  fragmentacao local: 137665
+  desalinhamento: 199352
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.339016
+Pb medio FF/LF: 0.337030
+Delta Pb (FF/LF - FF/FF): -0.001986
+Ganho visual (FF/FF - FF/LF): +0.001986
+
+===== Cenario 0,5 small | Carga 800 Erlang =====
+----------------------------------------------------------------------
+Carga: 800 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.484292
+Atendidas: 515708
+Bloqueadas: 484292
+Tempo de execucao: 10.23s
+Large na metade baixa: 137139
+Large na metade alta: 54860
+Posicao media large: 113.62
+Causas de bloqueio:
+  recurso bruto: 50
+  fragmentacao local: 252118
+  desalinhamento: 232124
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 800 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.481616
+Atendidas: 518384
+Bloqueadas: 481616
+Tempo de execucao: 19.43s
+Large na metade baixa: 22656
+Large na metade alta: 175514
+Posicao media large: 252.78
+Causas de bloqueio:
+  recurso bruto: 116
+  fragmentacao local: 237563
+  desalinhamento: 243937
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.484292
+Pb medio FF/LF: 0.481616
+Delta Pb (FF/LF - FF/FF): -0.002676
+Ganho visual (FF/FF - FF/LF): +0.002676
+
+===== Cenario 0,5 small | Carga 1200 Erlang =====
+----------------------------------------------------------------------
+Carga: 1200 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.554627
+Atendidas: 445373
+Bloqueadas: 554627
+Tempo de execucao: 12.33s
+Large na metade baixa: 113353
+Large na metade alta: 47609
+Posicao media large: 119.81
+Causas de bloqueio:
+  recurso bruto: 47
+  fragmentacao local: 314205
+  desalinhamento: 240375
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 1200 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.552162
+Atendidas: 447838
+Bloqueadas: 552162
+Tempo de execucao: 11.00s
+Large na metade baixa: 17225
+Large na metade alta: 150447
+Posicao media large: 252.10
+Causas de bloqueio:
+  recurso bruto: 381
+  fragmentacao local: 297653
+  desalinhamento: 254128
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.554627
+Pb medio FF/LF: 0.552162
+Delta Pb (FF/LF - FF/FF): -0.002465
+Ganho visual (FF/FF - FF/LF): +0.002465
+
+===== Cenario 0,5 small | Carga 1600 Erlang =====
+----------------------------------------------------------------------
+Carga: 1600 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.598216
+Atendidas: 401784
+Bloqueadas: 598216
+Tempo de execucao: 10.69s
+Large na metade baixa: 96686
+Large na metade alta: 44504
+Posicao media large: 126.78
+Causas de bloqueio:
+  recurso bruto: 220
+  fragmentacao local: 353317
+  desalinhamento: 244679
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 1600 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.595785
+Atendidas: 404215
+Bloqueadas: 595785
+Tempo de execucao: 16.24s
+Large na metade baixa: 15428
+Large na metade alta: 131497
+Posicao media large: 249.44
+Causas de bloqueio:
+  recurso bruto: 748
+  fragmentacao local: 335077
+  desalinhamento: 259960
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.598216
+Pb medio FF/LF: 0.595785
+Delta Pb (FF/LF - FF/FF): -0.002431
+Ganho visual (FF/FF - FF/LF): +0.002431
+
+===== Cenario 0,5 small | Carga 2000 Erlang =====
+----------------------------------------------------------------------
+Carga: 2000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.629429
+Atendidas: 370571
+Bloqueadas: 629429
+Tempo de execucao: 12.17s
+Large na metade baixa: 83973
+Large na metade alta: 43469
+Posicao media large: 132.89
+Causas de bloqueio:
+  recurso bruto: 99
+  fragmentacao local: 384429
+  desalinhamento: 244901
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 2000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.627857
+Atendidas: 372143
+Bloqueadas: 627857
+Tempo de execucao: 11.59s
+Large na metade baixa: 14155
+Large na metade alta: 118504
+Posicao media large: 246.89
+Causas de bloqueio:
+  recurso bruto: 825
+  fragmentacao local: 365523
+  desalinhamento: 261509
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.629429
+Pb medio FF/LF: 0.627857
+Delta Pb (FF/LF - FF/FF): -0.001572
+Ganho visual (FF/FF - FF/LF): +0.001572
+
+===== Cenario 0,5 small | Carga 3000 Erlang =====
+----------------------------------------------------------------------
+Carga: 3000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.680570
+Atendidas: 319430
+Bloqueadas: 680570
+Tempo de execucao: 10.14s
+Large na metade baixa: 59544
+Large na metade alta: 44543
+Posicao media large: 149.79
+Causas de bloqueio:
+  recurso bruto: 152
+  fragmentacao local: 436093
+  desalinhamento: 244325
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 3000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.679091
+Atendidas: 320909
+Bloqueadas: 679091
+Tempo de execucao: 11.60s
+Large na metade baixa: 14482
+Large na metade alta: 94913
+Posicao media large: 238.34
+Causas de bloqueio:
+  recurso bruto: 909
+  fragmentacao local: 407473
+  desalinhamento: 270709
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.680570
+Pb medio FF/LF: 0.679091
+Delta Pb (FF/LF - FF/FF): -0.001479
+Ganho visual (FF/FF - FF/LF): +0.001479
+
+===== Cenario 0,5 small | Carga 4000 Erlang =====
+----------------------------------------------------------------------
+Carga: 4000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.716298
+Atendidas: 283702
+Bloqueadas: 716298
+Tempo de execucao: 9.56s
+Large na metade baixa: 42969
+Large na metade alta: 45830
+Posicao media large: 165.98
+Causas de bloqueio:
+  recurso bruto: 520
+  fragmentacao local: 472967
+  desalinhamento: 242811
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 4000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.714307
+Atendidas: 285693
+Bloqueadas: 714307
+Tempo de execucao: 13.09s
+Large na metade baixa: 15761
+Large na metade alta: 77506
+Posicao media large: 229.72
+Causas de bloqueio:
+  recurso bruto: 1579
+  fragmentacao local: 449967
+  desalinhamento: 262761
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.716298
+Pb medio FF/LF: 0.714307
+Delta Pb (FF/LF - FF/FF): -0.001991
+Ganho visual (FF/FF - FF/LF): +0.001991
+
+===== Cenario 0,5 small | Carga 5000 Erlang =====
+----------------------------------------------------------------------
+Carga: 5000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.744101
+Atendidas: 255899
+Bloqueadas: 744101
+Tempo de execucao: 10.20s
+Large na metade baixa: 31046
+Large na metade alta: 43457
+Posicao media large: 178.93
+Causas de bloqueio:
+  recurso bruto: 318
+  fragmentacao local: 515286
+  desalinhamento: 228497
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 5000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.741434
+Atendidas: 258566
+Bloqueadas: 741434
+Tempo de execucao: 10.90s
+Large na metade baixa: 15893
+Large na metade alta: 63089
+Posicao media large: 224.22
+Causas de bloqueio:
+  recurso bruto: 1696
+  fragmentacao local: 501643
+  desalinhamento: 238095
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.744101
+Pb medio FF/LF: 0.741434
+Delta Pb (FF/LF - FF/FF): -0.002667
+Ganho visual (FF/FF - FF/LF): +0.002667
+
+===== Cenario 0,5 small | Carga 7000 Erlang =====
+----------------------------------------------------------------------
+Carga: 7000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.787820
+Atendidas: 212180
+Bloqueadas: 787820
+Tempo de execucao: 8.85s
+Large na metade baixa: 18470
+Large na metade alta: 33949
+Posicao media large: 192.61
+Causas de bloqueio:
+  recurso bruto: 926
+  fragmentacao local: 608885
+  desalinhamento: 178009
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 7000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.785080
+Atendidas: 214920
+Bloqueadas: 785080
+Tempo de execucao: 10.65s
+Large na metade baixa: 11182
+Large na metade alta: 42944
+Posicao media large: 222.35
+Causas de bloqueio:
+  recurso bruto: 7938
+  fragmentacao local: 605416
+  desalinhamento: 171726
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.787820
+Pb medio FF/LF: 0.785080
+Delta Pb (FF/LF - FF/FF): -0.002740
+Ganho visual (FF/FF - FF/LF): +0.002740
+
+===== Cenario 0,5 small | Carga 9000 Erlang =====
+----------------------------------------------------------------------
+Carga: 9000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.817556
+Atendidas: 182444
+Bloqueadas: 817556
+Tempo de execucao: 10.44s
+Large na metade baixa: 11772
+Large na metade alta: 25514
+Posicao media large: 198.74
+Causas de bloqueio:
+  recurso bruto: 1209
+  fragmentacao local: 674179
+  desalinhamento: 142168
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 9000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.814953
+Atendidas: 185047
+Bloqueadas: 814953
+Tempo de execucao: 7.01s
+Large na metade baixa: 7837
+Large na metade alta: 30599
+Posicao media large: 222.84
+Causas de bloqueio:
+  recurso bruto: 16235
+  fragmentacao local: 664631
+  desalinhamento: 134087
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.817556
+Pb medio FF/LF: 0.814953
+Delta Pb (FF/LF - FF/FF): -0.002603
+Ganho visual (FF/FF - FF/LF): +0.002603
+
+===== Cenario 0,5 small | Carga 12000 Erlang =====
+----------------------------------------------------------------------
+Carga: 12000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.846512
+Atendidas: 153488
+Bloqueadas: 846512
+Tempo de execucao: 5.72s
+Large na metade baixa: 6379
+Large na metade alta: 17907
+Posicao media large: 208.99
+Causas de bloqueio:
+  recurso bruto: 3600
+  fragmentacao local: 734073
+  desalinhamento: 108839
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 12000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.844517
+Atendidas: 155483
+Bloqueadas: 844517
+Tempo de execucao: 8.80s
+Large na metade baixa: 4068
+Large na metade alta: 19653
+Posicao media large: 226.85
+Causas de bloqueio:
+  recurso bruto: 32698
+  fragmentacao local: 716190
+  desalinhamento: 95629
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.846512
+Pb medio FF/LF: 0.844517
+Delta Pb (FF/LF - FF/FF): -0.001995
+Ganho visual (FF/FF - FF/LF): +0.001995
+
+===== Cenario 0,5 small | Carga 16000 Erlang =====
+----------------------------------------------------------------------
+Carga: 16000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.871204
+Atendidas: 128796
+Bloqueadas: 871204
+Tempo de execucao: 5.43s
+Large na metade baixa: 3215
+Large na metade alta: 11262
+Posicao media large: 215.41
+Causas de bloqueio:
+  recurso bruto: 9999
+  fragmentacao local: 775460
+  desalinhamento: 85745
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 16000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.870032
+Atendidas: 129968
+Bloqueadas: 870032
+Tempo de execucao: 6.02s
+Large na metade baixa: 2076
+Large na metade alta: 12065
+Posicao media large: 231.21
+Causas de bloqueio:
+  recurso bruto: 58129
+  fragmentacao local: 730674
+  desalinhamento: 81229
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.871204
+Pb medio FF/LF: 0.870032
+Delta Pb (FF/LF - FF/FF): -0.001172
+Ganho visual (FF/FF - FF/LF): +0.001172
+
+===== Cenario 0,5 small | Carga 20000 Erlang =====
+----------------------------------------------------------------------
+Carga: 20000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.888247
+Atendidas: 111753
+Bloqueadas: 888247
+Tempo de execucao: 6.21s
+Large na metade baixa: 1785
+Large na metade alta: 7115
+Posicao media large: 220.04
+Causas de bloqueio:
+  recurso bruto: 19583
+  fragmentacao local: 796081
+  desalinhamento: 72583
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 20000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.887362
+Atendidas: 112638
+Bloqueadas: 887362
+Tempo de execucao: 5.60s
+Large na metade baixa: 1366
+Large na metade alta: 7348
+Posicao media large: 233.40
+Causas de bloqueio:
+  recurso bruto: 59889
+  fragmentacao local: 758341
+  desalinhamento: 69132
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.888247
+Pb medio FF/LF: 0.887362
+Delta Pb (FF/LF - FF/FF): -0.000885
+Ganho visual (FF/FF - FF/LF): +0.000885
+
+===== Cenario 0,5 small | Carga 25000 Erlang =====
+----------------------------------------------------------------------
+Carga: 25000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.904062
+Atendidas: 95938
+Bloqueadas: 904062
+Tempo de execucao: 6.66s
+Large na metade baixa: 1145
+Large na metade alta: 4323
+Posicao media large: 220.51
+Causas de bloqueio:
+  recurso bruto: 21994
+  fragmentacao local: 822577
+  desalinhamento: 59491
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 25000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.903144
+Atendidas: 96856
+Bloqueadas: 903144
+Tempo de execucao: 6.17s
+Large na metade baixa: 745
+Large na metade alta: 4394
+Posicao media large: 234.73
+Causas de bloqueio:
+  recurso bruto: 67937
+  fragmentacao local: 777686
+  desalinhamento: 57521
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.904062
+Pb medio FF/LF: 0.903144
+Delta Pb (FF/LF - FF/FF): -0.000918
+Ganho visual (FF/FF - FF/LF): +0.000918
+
+===== Cenario 0,5 small | Carga 30000 Erlang =====
+----------------------------------------------------------------------
+Carga: 30000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.916006
+Atendidas: 83994
+Bloqueadas: 916006
+Tempo de execucao: 5.84s
+Large na metade baixa: 877
+Large na metade alta: 2659
+Posicao media large: 212.12
+Causas de bloqueio:
+  recurso bruto: 39331
+  fragmentacao local: 827687
+  desalinhamento: 48988
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 30000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.915522
+Atendidas: 84478
+Bloqueadas: 915522
+Tempo de execucao: 5.88s
+Large na metade baixa: 596
+Large na metade alta: 3054
+Posicao media large: 231.95
+Causas de bloqueio:
+  recurso bruto: 63662
+  fragmentacao local: 802326
+  desalinhamento: 49534
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.916006
+Pb medio FF/LF: 0.915522
+Delta Pb (FF/LF - FF/FF): -0.000484
+Ganho visual (FF/FF - FF/LF): +0.000484
+
+===== Cenario 0,5 small | Carga 35000 Erlang =====
+----------------------------------------------------------------------
+Carga: 35000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.925985
+Atendidas: 74015
+Bloqueadas: 925985
+Tempo de execucao: 4.87s
+Large na metade baixa: 794
+Large na metade alta: 1781
+Posicao media large: 201.43
+Causas de bloqueio:
+  recurso bruto: 38840
+  fragmentacao local: 846221
+  desalinhamento: 40924
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 35000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.925404
+Atendidas: 74596
+Bloqueadas: 925404
+Tempo de execucao: 6.15s
+Large na metade baixa: 443
+Large na metade alta: 2148
+Posicao media large: 230.36
+Causas de bloqueio:
+  recurso bruto: 78463
+  fragmentacao local: 806713
+  desalinhamento: 40228
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.925985
+Pb medio FF/LF: 0.925404
+Delta Pb (FF/LF - FF/FF): -0.000581
+Ganho visual (FF/FF - FF/LF): +0.000581
+
+===== Cenario 0,5 small | Carga 40000 Erlang =====
+----------------------------------------------------------------------
+Carga: 40000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.934148
+Atendidas: 65852
+Bloqueadas: 934148
+Tempo de execucao: 6.97s
+Large na metade baixa: 743
+Large na metade alta: 1384
+Posicao media large: 194.33
+Causas de bloqueio:
+  recurso bruto: 41730
+  fragmentacao local: 858855
+  desalinhamento: 33563
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 40000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.933607
+Atendidas: 66393
+Bloqueadas: 933607
+Tempo de execucao: 6.37s
+Large na metade baixa: 506
+Large na metade alta: 1559
+Posicao media large: 217.59
+Causas de bloqueio:
+  recurso bruto: 77141
+  fragmentacao local: 823127
+  desalinhamento: 33339
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.934148
+Pb medio FF/LF: 0.933607
+Delta Pb (FF/LF - FF/FF): -0.000541
+Ganho visual (FF/FF - FF/LF): +0.000541
+
+===== Cenario 0,5 small | Carga 45000 Erlang =====
+----------------------------------------------------------------------
+Carga: 45000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.941133
+Atendidas: 58867
+Bloqueadas: 941133
+Tempo de execucao: 7.24s
+Large na metade baixa: 663
+Large na metade alta: 1095
+Posicao media large: 184.69
+Causas de bloqueio:
+  recurso bruto: 33044
+  fragmentacao local: 881901
+  desalinhamento: 26188
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 45000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.940751
+Atendidas: 59249
+Bloqueadas: 940751
+Tempo de execucao: 5.58s
+Large na metade baixa: 435
+Large na metade alta: 1275
+Posicao media large: 210.49
+Causas de bloqueio:
+  recurso bruto: 100170
+  fragmentacao local: 814416
+  desalinhamento: 26165
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.941133
+Pb medio FF/LF: 0.940751
+Delta Pb (FF/LF - FF/FF): -0.000382
+Ganho visual (FF/FF - FF/LF): +0.000382
+
+===== Cenario 0,5 small | Carga 50000 Erlang =====
+----------------------------------------------------------------------
+Carga: 50000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.946282
+Atendidas: 53718
+Bloqueadas: 946282
+Tempo de execucao: 5.91s
+Large na metade baixa: 732
+Large na metade alta: 897
+Posicao media large: 171.58
+Causas de bloqueio:
+  recurso bruto: 17304
+  fragmentacao local: 907334
+  desalinhamento: 21644
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 50000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.945837
+Atendidas: 54163
+Bloqueadas: 945837
+Tempo de execucao: 8.52s
+Large na metade baixa: 404
+Large na metade alta: 1183
+Posicao media large: 213.59
+Causas de bloqueio:
+  recurso bruto: 86177
+  fragmentacao local: 837817
+  desalinhamento: 21843
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.946282
+Pb medio FF/LF: 0.945837
+Delta Pb (FF/LF - FF/FF): -0.000445
+Ganho visual (FF/FF - FF/LF): +0.000445
+
+######################################################################
+Cenario de trafego: 0,9 small
+Probabilidade de requisicao small: 0.9
+Probabilidade de requisicao large: 0.09999999999999998
+######################################################################
+
+===== Cenario 0,9 small | Carga 50 Erlang =====
+----------------------------------------------------------------------
+Carga: 50 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.000000
+Atendidas: 1000000
+Bloqueadas: 0
+Tempo de execucao: 6.70s
+Large na metade baixa: 100396
+Large na metade alta: 112
+Posicao media large: 56.91
+Causas de bloqueio:
+  recurso bruto: 0
+  fragmentacao local: 0
+  desalinhamento: 0
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 50 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.000000
+Atendidas: 1000000
+Bloqueadas: 0
+Tempo de execucao: 6.63s
+Large na metade baixa: 0
+Large na metade alta: 100508
+Posicao media large: 305.43
+Causas de bloqueio:
+  recurso bruto: 0
+  fragmentacao local: 0
+  desalinhamento: 0
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.000000
+Pb medio FF/LF: 0.000000
+Delta Pb (FF/LF - FF/FF): +0.000000
+Ganho visual (FF/FF - FF/LF): -0.000000
+
+===== Cenario 0,9 small | Carga 100 Erlang =====
+----------------------------------------------------------------------
+Carga: 100 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.000000
+Atendidas: 1000000
+Bloqueadas: 0
+Tempo de execucao: 5.20s
+Large na metade baixa: 75162
+Large na metade alta: 24262
+Posicao media large: 100.39
+Causas de bloqueio:
+  recurso bruto: 0
+  fragmentacao local: 0
+  desalinhamento: 0
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 100 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.000000
+Atendidas: 1000000
+Bloqueadas: 0
+Tempo de execucao: 7.92s
+Large na metade baixa: 0
+Large na metade alta: 99424
+Posicao media large: 298.71
+Causas de bloqueio:
+  recurso bruto: 0
+  fragmentacao local: 0
+  desalinhamento: 0
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.000000
+Pb medio FF/LF: 0.000000
+Delta Pb (FF/LF - FF/FF): +0.000000
+Ganho visual (FF/FF - FF/LF): -0.000000
+
+===== Cenario 0,9 small | Carga 200 Erlang =====
+----------------------------------------------------------------------
+Carga: 200 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.043293
+Atendidas: 956707
+Bloqueadas: 43293
+Tempo de execucao: 5.93s
+Large na metade baixa: 44261
+Large na metade alta: 37395
+Posicao media large: 143.83
+Causas de bloqueio:
+  recurso bruto: 1
+  fragmentacao local: 17141
+  desalinhamento: 26151
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 200 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.044880
+Atendidas: 955120
+Bloqueadas: 44880
+Tempo de execucao: 6.90s
+Large na metade baixa: 2068
+Large na metade alta: 79259
+Posicao media large: 285.36
+Causas de bloqueio:
+  recurso bruto: 4
+  fragmentacao local: 13275
+  desalinhamento: 31601
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.043293
+Pb medio FF/LF: 0.044880
+Delta Pb (FF/LF - FF/FF): +0.001587
+Ganho visual (FF/FF - FF/LF): -0.001587
+
+===== Cenario 0,9 small | Carga 400 Erlang =====
+----------------------------------------------------------------------
+Carga: 400 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.251839
+Atendidas: 748161
+Bloqueadas: 251839
+Tempo de execucao: 7.47s
+Large na metade baixa: 34233
+Large na metade alta: 11592
+Posicao media large: 102.92
+Causas de bloqueio:
+  recurso bruto: 18
+  fragmentacao local: 77031
+  desalinhamento: 174790
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 400 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.250396
+Atendidas: 749604
+Bloqueadas: 250396
+Tempo de execucao: 7.90s
+Large na metade baixa: 4038
+Large na metade alta: 42414
+Posicao media large: 268.84
+Causas de bloqueio:
+  recurso bruto: 19
+  fragmentacao local: 71575
+  desalinhamento: 178802
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.251839
+Pb medio FF/LF: 0.250396
+Delta Pb (FF/LF - FF/FF): -0.001443
+Ganho visual (FF/FF - FF/LF): +0.001443
+
+===== Cenario 0,9 small | Carga 800 Erlang =====
+----------------------------------------------------------------------
+Carga: 800 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.410288
+Atendidas: 589712
+Bloqueadas: 410288
+Tempo de execucao: 10.43s
+Large na metade baixa: 25376
+Large na metade alta: 9913
+Posicao media large: 113.16
+Causas de bloqueio:
+  recurso bruto: 45
+  fragmentacao local: 154021
+  desalinhamento: 256222
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 800 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.410146
+Atendidas: 589854
+Bloqueadas: 410146
+Tempo de execucao: 9.67s
+Large na metade baixa: 2106
+Large na metade alta: 33662
+Posicao media large: 274.35
+Causas de bloqueio:
+  recurso bruto: 43
+  fragmentacao local: 139884
+  desalinhamento: 270219
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.410288
+Pb medio FF/LF: 0.410146
+Delta Pb (FF/LF - FF/FF): -0.000142
+Ganho visual (FF/FF - FF/LF): +0.000142
+
+===== Cenario 0,9 small | Carga 1200 Erlang =====
+----------------------------------------------------------------------
+Carga: 1200 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.485977
+Atendidas: 514023
+Bloqueadas: 485977
+Tempo de execucao: 6.96s
+Large na metade baixa: 21189
+Large na metade alta: 8156
+Posicao media large: 118.16
+Causas de bloqueio:
+  recurso bruto: 75
+  fragmentacao local: 244076
+  desalinhamento: 241826
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 1200 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.486005
+Atendidas: 513995
+Bloqueadas: 486005
+Tempo de execucao: 9.63s
+Large na metade baixa: 1253
+Large na metade alta: 28600
+Posicao media large: 276.44
+Causas de bloqueio:
+  recurso bruto: 87
+  fragmentacao local: 219138
+  desalinhamento: 266780
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.485977
+Pb medio FF/LF: 0.486005
+Delta Pb (FF/LF - FF/FF): +0.000028
+Ganho visual (FF/FF - FF/LF): -0.000028
+
+===== Cenario 0,9 small | Carga 1600 Erlang =====
+----------------------------------------------------------------------
+Carga: 1600 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.534433
+Atendidas: 465567
+Bloqueadas: 534433
+Tempo de execucao: 7.97s
+Large na metade baixa: 18777
+Large na metade alta: 7088
+Posicao media large: 123.29
+Causas de bloqueio:
+  recurso bruto: 162
+  fragmentacao local: 324265
+  desalinhamento: 210006
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 1600 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.535079
+Atendidas: 464921
+Bloqueadas: 535079
+Tempo de execucao: 9.67s
+Large na metade baixa: 775
+Large na metade alta: 25315
+Posicao media large: 278.31
+Causas de bloqueio:
+  recurso bruto: 157
+  fragmentacao local: 293455
+  desalinhamento: 241467
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.534433
+Pb medio FF/LF: 0.535079
+Delta Pb (FF/LF - FF/FF): +0.000646
+Ganho visual (FF/FF - FF/LF): -0.000646
+
+===== Cenario 0,9 small | Carga 2000 Erlang =====
+----------------------------------------------------------------------
+Carga: 2000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.569022
+Atendidas: 430978
+Bloqueadas: 569022
+Tempo de execucao: 8.68s
+Large na metade baixa: 16555
+Large na metade alta: 6216
+Posicao media large: 126.02
+Causas de bloqueio:
+  recurso bruto: 278
+  fragmentacao local: 397415
+  desalinhamento: 171329
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 2000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.569409
+Atendidas: 430591
+Bloqueadas: 569409
+Tempo de execucao: 7.65s
+Large na metade baixa: 542
+Large na metade alta: 22814
+Posicao media large: 279.46
+Causas de bloqueio:
+  recurso bruto: 301
+  fragmentacao local: 362655
+  desalinhamento: 206453
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.569022
+Pb medio FF/LF: 0.569409
+Delta Pb (FF/LF - FF/FF): +0.000387
+Ganho visual (FF/FF - FF/LF): -0.000387
+
+===== Cenario 0,9 small | Carga 3000 Erlang =====
+----------------------------------------------------------------------
+Carga: 3000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.628252
+Atendidas: 371748
+Bloqueadas: 628252
+Tempo de execucao: 5.13s
+Large na metade baixa: 12795
+Large na metade alta: 7140
+Posicao media large: 147.35
+Causas de bloqueio:
+  recurso bruto: 1547
+  fragmentacao local: 506650
+  desalinhamento: 120055
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 3000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.627558
+Atendidas: 372442
+Bloqueadas: 627558
+Tempo de execucao: 7.79s
+Large na metade baixa: 391
+Large na metade alta: 19900
+Posicao media large: 275.90
+Causas de bloqueio:
+  recurso bruto: 1635
+  fragmentacao local: 474705
+  desalinhamento: 151218
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.628252
+Pb medio FF/LF: 0.627558
+Delta Pb (FF/LF - FF/FF): -0.000694
+Ganho visual (FF/FF - FF/LF): +0.000694
+
+===== Cenario 0,9 small | Carga 4000 Erlang =====
+----------------------------------------------------------------------
+Carga: 4000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.668454
+Atendidas: 331546
+Bloqueadas: 668454
+Tempo de execucao: 5.53s
+Large na metade baixa: 9010
+Large na metade alta: 8070
+Posicao media large: 164.44
+Causas de bloqueio:
+  recurso bruto: 5003
+  fragmentacao local: 556177
+  desalinhamento: 107274
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 4000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.666972
+Atendidas: 333028
+Bloqueadas: 666972
+Tempo de execucao: 8.29s
+Large na metade baixa: 329
+Large na metade alta: 17006
+Posicao media large: 274.12
+Causas de bloqueio:
+  recurso bruto: 8228
+  fragmentacao local: 541618
+  desalinhamento: 117126
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.668454
+Pb medio FF/LF: 0.666972
+Delta Pb (FF/LF - FF/FF): -0.001482
+Ganho visual (FF/FF - FF/LF): +0.001482
+
+===== Cenario 0,9 small | Carga 5000 Erlang =====
+----------------------------------------------------------------------
+Carga: 5000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.696987
+Atendidas: 303013
+Bloqueadas: 696987
+Tempo de execucao: 9.37s
+Large na metade baixa: 6057
+Large na metade alta: 9687
+Posicao media large: 180.67
+Causas de bloqueio:
+  recurso bruto: 17319
+  fragmentacao local: 573736
+  desalinhamento: 105932
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 5000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.695557
+Atendidas: 304443
+Bloqueadas: 695557
+Tempo de execucao: 8.51s
+Large na metade baixa: 322
+Large na metade alta: 15484
+Posicao media large: 268.92
+Causas de bloqueio:
+  recurso bruto: 26650
+  fragmentacao local: 559651
+  desalinhamento: 109256
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.696987
+Pb medio FF/LF: 0.695557
+Delta Pb (FF/LF - FF/FF): -0.001430
+Ganho visual (FF/FF - FF/LF): +0.001430
+
+===== Cenario 0,9 small | Carga 7000 Erlang =====
+----------------------------------------------------------------------
+Carga: 7000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.738981
+Atendidas: 261019
+Bloqueadas: 738981
+Tempo de execucao: 8.25s
+Large na metade baixa: 2207
+Large na metade alta: 10386
+Posicao media large: 218.53
+Causas de bloqueio:
+  recurso bruto: 25124
+  fragmentacao local: 585293
+  desalinhamento: 128564
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 7000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.737506
+Atendidas: 262494
+Bloqueadas: 737506
+Tempo de execucao: 8.21s
+Large na metade baixa: 268
+Large na metade alta: 12314
+Posicao media large: 265.68
+Causas de bloqueio:
+  recurso bruto: 64567
+  fragmentacao local: 557339
+  desalinhamento: 115600
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.738981
+Pb medio FF/LF: 0.737506
+Delta Pb (FF/LF - FF/FF): -0.001475
+Ganho visual (FF/FF - FF/LF): +0.001475
+
+===== Cenario 0,9 small | Carga 9000 Erlang =====
+----------------------------------------------------------------------
+Carga: 9000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.769223
+Atendidas: 230777
+Bloqueadas: 769223
+Tempo de execucao: 5.82s
+Large na metade baixa: 863
+Large na metade alta: 8165
+Posicao media large: 239.51
+Causas de bloqueio:
+  recurso bruto: 30195
+  fragmentacao local: 602010
+  desalinhamento: 137018
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 9000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.767228
+Atendidas: 232772
+Bloqueadas: 767228
+Tempo de execucao: 6.36s
+Large na metade baixa: 231
+Large na metade alta: 8527
+Posicao media large: 266.87
+Causas de bloqueio:
+  recurso bruto: 120878
+  fragmentacao local: 521519
+  desalinhamento: 124831
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.769223
+Pb medio FF/LF: 0.767228
+Delta Pb (FF/LF - FF/FF): -0.001995
+Ganho visual (FF/FF - FF/LF): +0.001995
+
+===== Cenario 0,9 small | Carga 12000 Erlang =====
+----------------------------------------------------------------------
+Carga: 12000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.802542
+Atendidas: 197458
+Bloqueadas: 802542
+Tempo de execucao: 6.68s
+Large na metade baixa: 338
+Large na metade alta: 3689
+Posicao media large: 248.81
+Causas de bloqueio:
+  recurso bruto: 34886
+  fragmentacao local: 645135
+  desalinhamento: 122521
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 12000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.801812
+Atendidas: 198188
+Bloqueadas: 801812
+Tempo de execucao: 5.31s
+Large na metade baixa: 140
+Large na metade alta: 3902
+Posicao media large: 267.75
+Causas de bloqueio:
+  recurso bruto: 31850
+  fragmentacao local: 646234
+  desalinhamento: 123728
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.802542
+Pb medio FF/LF: 0.801812
+Delta Pb (FF/LF - FF/FF): -0.000730
+Ganho visual (FF/FF - FF/LF): +0.000730
+
+===== Cenario 0,9 small | Carga 16000 Erlang =====
+----------------------------------------------------------------------
+Carga: 16000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.837324
+Atendidas: 162676
+Bloqueadas: 837324
+Tempo de execucao: 6.71s
+Large na metade baixa: 206
+Large na metade alta: 1163
+Posicao media large: 238.64
+Causas de bloqueio:
+  recurso bruto: 42840
+  fragmentacao local: 697197
+  desalinhamento: 97287
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 16000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.836012
+Atendidas: 163988
+Bloqueadas: 836012
+Tempo de execucao: 5.08s
+Large na metade baixa: 65
+Large na metade alta: 1292
+Posicao media large: 264.51
+Causas de bloqueio:
+  recurso bruto: 63329
+  fragmentacao local: 674711
+  desalinhamento: 97972
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.837324
+Pb medio FF/LF: 0.836012
+Delta Pb (FF/LF - FF/FF): -0.001312
+Ganho visual (FF/FF - FF/LF): +0.001312
+
+===== Cenario 0,9 small | Carga 20000 Erlang =====
+----------------------------------------------------------------------
+Carga: 20000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.864100
+Atendidas: 135900
+Bloqueadas: 864100
+Tempo de execucao: 4.96s
+Large na metade baixa: 135
+Large na metade alta: 486
+Posicao media large: 221.83
+Causas de bloqueio:
+  recurso bruto: 43845
+  fragmentacao local: 745913
+  desalinhamento: 74342
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 20000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.863735
+Atendidas: 136265
+Bloqueadas: 863735
+Tempo de execucao: 7.20s
+Large na metade baixa: 28
+Large na metade alta: 609
+Posicao media large: 269.24
+Causas de bloqueio:
+  recurso bruto: 50118
+  fragmentacao local: 739143
+  desalinhamento: 74474
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.864100
+Pb medio FF/LF: 0.863735
+Delta Pb (FF/LF - FF/FF): -0.000365
+Ganho visual (FF/FF - FF/LF): +0.000365
+
+===== Cenario 0,9 small | Carga 25000 Erlang =====
+----------------------------------------------------------------------
+Carga: 25000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.889150
+Atendidas: 110850
+Bloqueadas: 889150
+Tempo de execucao: 6.73s
+Large na metade baixa: 95
+Large na metade alta: 198
+Posicao media large: 195.55
+Causas de bloqueio:
+  recurso bruto: 61365
+  fragmentacao local: 774160
+  desalinhamento: 53625
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 25000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.888372
+Atendidas: 111628
+Bloqueadas: 888372
+Tempo de execucao: 4.98s
+Large na metade baixa: 23
+Large na metade alta: 299
+Posicao media large: 260.17
+Causas de bloqueio:
+  recurso bruto: 58833
+  fragmentacao local: 775763
+  desalinhamento: 53776
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.889150
+Pb medio FF/LF: 0.888372
+Delta Pb (FF/LF - FF/FF): -0.000778
+Ganho visual (FF/FF - FF/LF): +0.000778
+
+===== Cenario 0,9 small | Carga 30000 Erlang =====
+----------------------------------------------------------------------
+Carga: 30000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.906462
+Atendidas: 93538
+Bloqueadas: 906462
+Tempo de execucao: 4.53s
+Large na metade baixa: 97
+Large na metade alta: 151
+Posicao media large: 186.66
+Causas de bloqueio:
+  recurso bruto: 26128
+  fragmentacao local: 841898
+  desalinhamento: 38436
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 30000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.905937
+Atendidas: 94063
+Bloqueadas: 905937
+Tempo de execucao: 5.27s
+Large na metade baixa: 8
+Large na metade alta: 250
+Posicao media large: 269.91
+Causas de bloqueio:
+  recurso bruto: 40324
+  fragmentacao local: 827014
+  desalinhamento: 38599
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.906462
+Pb medio FF/LF: 0.905937
+Delta Pb (FF/LF - FF/FF): -0.000525
+Ganho visual (FF/FF - FF/LF): +0.000525
+
+===== Cenario 0,9 small | Carga 35000 Erlang =====
+----------------------------------------------------------------------
+Carga: 35000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.919794
+Atendidas: 80206
+Bloqueadas: 919794
+Tempo de execucao: 4.75s
+Large na metade baixa: 90
+Large na metade alta: 120
+Posicao media large: 177.77
+Causas de bloqueio:
+  recurso bruto: 22551
+  fragmentacao local: 868921
+  desalinhamento: 28322
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 35000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.919153
+Atendidas: 80847
+Bloqueadas: 919153
+Tempo de execucao: 5.93s
+Large na metade baixa: 13
+Large na metade alta: 194
+Posicao media large: 261.87
+Causas de bloqueio:
+  recurso bruto: 26775
+  fragmentacao local: 863422
+  desalinhamento: 28956
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.919794
+Pb medio FF/LF: 0.919153
+Delta Pb (FF/LF - FF/FF): -0.000641
+Ganho visual (FF/FF - FF/LF): +0.000641
+
+===== Cenario 0,9 small | Carga 40000 Erlang =====
+----------------------------------------------------------------------
+Carga: 40000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.928991
+Atendidas: 71009
+Bloqueadas: 928991
+Tempo de execucao: 4.20s
+Large na metade baixa: 75
+Large na metade alta: 124
+Posicao media large: 185.67
+Causas de bloqueio:
+  recurso bruto: 15821
+  fragmentacao local: 891038
+  desalinhamento: 22132
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 40000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.928753
+Atendidas: 71247
+Bloqueadas: 928753
+Tempo de execucao: 3.80s
+Large na metade baixa: 4
+Large na metade alta: 188
+Posicao media large: 271.67
+Causas de bloqueio:
+  recurso bruto: 19513
+  fragmentacao local: 886992
+  desalinhamento: 22248
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.928991
+Pb medio FF/LF: 0.928753
+Delta Pb (FF/LF - FF/FF): -0.000238
+Ganho visual (FF/FF - FF/LF): +0.000238
+
+===== Cenario 0,9 small | Carga 45000 Erlang =====
+----------------------------------------------------------------------
+Carga: 45000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.936874
+Atendidas: 63126
+Bloqueadas: 936874
+Tempo de execucao: 4.93s
+Large na metade baixa: 71
+Large na metade alta: 97
+Posicao media large: 177.74
+Causas de bloqueio:
+  recurso bruto: 33443
+  fragmentacao local: 885961
+  desalinhamento: 17470
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 45000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.936339
+Atendidas: 63661
+Bloqueadas: 936339
+Tempo de execucao: 4.10s
+Large na metade baixa: 2
+Large na metade alta: 160
+Posicao media large: 280.50
+Causas de bloqueio:
+  recurso bruto: 40134
+  fragmentacao local: 878534
+  desalinhamento: 17671
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.936874
+Pb medio FF/LF: 0.936339
+Delta Pb (FF/LF - FF/FF): -0.000535
+Ganho visual (FF/FF - FF/LF): +0.000535
+
+===== Cenario 0,9 small | Carga 50000 Erlang =====
+----------------------------------------------------------------------
+Carga: 50000 Erlang | politica large: FF
+----------------------------------------------------------------------
+Pb: 0.943584
+Atendidas: 56416
+Bloqueadas: 943584
+Tempo de execucao: 4.38s
+Large na metade baixa: 81
+Large na metade alta: 107
+Posicao media large: 184.98
+Causas de bloqueio:
+  recurso bruto: 11752
+  fragmentacao local: 918108
+  desalinhamento: 13724
+  indefinido: 0
+
+----------------------------------------------------------------------
+Carga: 50000 Erlang | politica large: LF
+----------------------------------------------------------------------
+Pb: 0.943017
+Atendidas: 56983
+Bloqueadas: 943017
+Tempo de execucao: 4.69s
+Large na metade baixa: 7
+Large na metade alta: 174
+Posicao media large: 275.42
+Causas de bloqueio:
+  recurso bruto: 16462
+  fragmentacao local: 912861
+  desalinhamento: 13694
+  indefinido: 0
+
+Resumo da carga
+Pb medio FF/FF: 0.943584
+Pb medio FF/LF: 0.943017
+Delta Pb (FF/LF - FF/FF): -0.000567
+Ganho visual (FF/FF - FF/LF): +0.000567
+
+Graficos gerados:
+  pb_vs_erlang_0_1_small.png
+  pb_vs_erlang_0_5_small.png
+  pb_vs_erlang_0_9_small.png
+  ganho_visual_vs_erlang_tres_cenarios.png
+  ganho_visual_vs_pb_tres_cenarios.png
